@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Healthcare System</title>
+</head>
+<body>
+    <h1>Patient Vitals</h1>
+    <table>
+        <tr>
+            <th>Heart Rate</th>
+            <th>Blood Pressure</th>
+            <th>Temperature</th>
+        </tr>
+        {% for row in data %}
+        <tr>
+            <td>{{ row[1] }}</td>
+            <td>{{ row[2] }}</td>
+            <td>{{ row[3] }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+    <form method="POST" action="/add">
+        <input type="text" name="heart_rate" placeholder="Heart Rate">
+        <input type="text" name="blood_pressure" placeholder="Blood Pressure">
+        <input type="text" name="temperature" placeholder="Temperature">
+        <button type="submit">Add</button>
+    </form>
+</body>
+</html>
